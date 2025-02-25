@@ -1,18 +1,21 @@
 import express from "express";
-import { PrismaClient } from "@prisma/client";
+import { getBooks } from "./controllers/get-books/get-books";
+import { postBooks } from "./controllers/post-books/post-books";
 
 const app = express();
-const Prisma = new PrismaClient();
 
 app.use(express.json());
 
-
-app.get("/Livros", async (req, res) => {
-    res.json({ message: "Hello World" });
-
+app.post("Livros", async (req, res) => {
+    postBooks(req, res);
 });
 
-const PORT = 5000;
+app.get("/Livros", async (req, res) => {
+    getBooks(req, res);
+});
+
+
+const PORT = 7000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
