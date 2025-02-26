@@ -11,7 +11,7 @@ export const getBooks = async (req: Request, res: Response) => {
                 title: true,
                 author: true,
                 categories: true,
-                description: true,
+                description: true,  
                 imageUrl: true,
             },
         });

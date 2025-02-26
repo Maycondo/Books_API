@@ -17,7 +17,7 @@ export const postBooks = async (req: Request, res: Response) => {
                 author,
                 categories,
                 description,
-                imageUrl
+                imageUrl: imageUrl || null,
             }
         });
         

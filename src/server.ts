@@ -1,21 +1,12 @@
 import express from "express";
-import { getBooks } from "./controllers/get-books/get-books";
-import { postBooks } from "./controllers/post-books/post-books";
-
+import router from "./routes/books.routes";
 const app = express();
+const PORT = 4000;
 
 app.use(express.json());
-
-app.post("Livros", async (req, res) => {
-    postBooks(req, res);
-});
-
-app.get("/Livros", async (req, res) => {
-    getBooks(req, res);
-});
+app.use('/', router);
 
 
-const PORT = 7000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
