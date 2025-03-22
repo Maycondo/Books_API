@@ -1,6 +1,8 @@
 import { getBooks } from "../controllers/get-books";
 import { postBooks } from "../controllers/post-books";
 import { getBooksId } from "../controllers/get-books-id";
+import { putBooks } from "../controllers/put-books-id";
+import { deleteBooks } from "../controllers/delete-books-id";
 import express from 'express';
 const router = express.Router();
 
@@ -16,8 +18,13 @@ router.post("/books", async (req, res) => {
     postBooks(req, res);
 });
 
-router.put("/:id", (req, res) => {
-    const id = req.params.id;
-})
+router.put("/edit:id", async (req, res) => {
+    putBooks(req, res);
+});
+
+router.delete("/delete:id", async (req, res) => {
+    deleteBooks(req, res);
+});
+
 
 export default router;
