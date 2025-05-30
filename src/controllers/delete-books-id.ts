@@ -8,11 +8,14 @@ export const deleteBooks = async (req: Request, res: Response) => {
 
     try {
         const book = await prisma.book.delete({ 
-            where: { id: id }
-             });
+            where: { id } // id permanece como string
+        });
 
-         res.json({ message: "Book deleted successfully", book})
+        res.json({ message: "Book deleted successfully", book });
     } catch (error) {
-        res.status(500).json({ message: "Error deleting book", error: (error as any).message });
+        res.status(500).json({ 
+            message: "Error deleting book", 
+            error: (error as any).message 
+        });
     }
 }

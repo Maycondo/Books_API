@@ -15,4 +15,5 @@ model Book {
   author      String
   categories  String[]
   description String
+  rating      Float?
 }
