@@ -1,12 +1,14 @@
 import express from "express";
 import router from "./routes/books.routes";
-const app = express();
-const PORT = 7000;
+import cors from "cors";
 
+const app = express();
+const PORT = 4000;
+
+app.use(cors()); // <-- IMPORTANTE: deve vir antes das rotas
 app.use(express.json());
 app.use('/', router);
 
-
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-})
+});
