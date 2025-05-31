@@ -6,7 +6,7 @@ const Prisma = new PrismaClient();
 export const putBooks = async (req: Request, res: Response) => {
     const id = req.params.id;
     try {
-        const { title, author, description, categories, imageUrl } = req.body;
+        const { title, author, description, categories, imageUrl, rating } = req.body;
 
         if (!title || !author || !description || !Array.isArray(categories)) {
             return res.status(400).json({ message: "Missing required fields" });
@@ -20,6 +20,7 @@ export const putBooks = async (req: Request, res: Response) => {
                 description,
                 categories,
                 imageUrl: imageUrl || null,
+                rating: rating || null,
             }
         });
 
