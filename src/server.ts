@@ -3,9 +3,9 @@ import router from "./routes/books.routes";
 import cors from "cors";
 
 const app = express();
-const PORT = 8000;
+const PORT = 5000;
 
-app.use(cors()); // <-- IMPORTANTE: deve vir antes das rotas
+app.use(cors()); 
 app.use(express.json());
 app.use('/', router);
 

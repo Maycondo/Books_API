@@ -14,7 +14,7 @@ router.get("/:id", (req, res) => {
     getBooksId(req, res);
 })
 
-router.post("/books", async (req, res) => {
+router.post("/Bookadd", async (req, res) => {
     postBooks(req, res);
 });
 
