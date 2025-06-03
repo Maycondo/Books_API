@@ -18,7 +18,7 @@ router.post("/Bookadd", async (req, res) => {
     postBooks(req, res);
 });
 
-router.put("/edit:id", async (req, res) => {
+router.put("/update:id", async (req, res) => {
     putBooks(req, res);
 });
 
