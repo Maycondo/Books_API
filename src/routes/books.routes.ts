@@ -3,28 +3,28 @@ import { postBooks } from "../controllers/post-books";
 import { getBooksId } from "../controllers/get-books-id";
 import { putBooks } from "../controllers/put-books-id";
 import { deleteBooks } from "../controllers/delete-books-id";
-import express from 'express';
+import express, { Request, Response } from "express";
+
 const router = express.Router();
 
-router.get("/Books", async (req, res) => {
-    getBooks(req, res);
-});     
-
-router.get("/:id", (req, res) => {
-    getBooksId(req, res);
-})
-
-router.post("/Bookadd", async (req, res) => {
-    postBooks(req, res);
+router.get("/Books", async (req: Request, res: Response) => {
+  getBooks(req, res);
 });
 
-router.put("/update:id", async (req, res) => {
-    putBooks(req, res);
+router.get("/:id", (req: Request, res: Response) => {
+  getBooksId(req, res);
 });
 
-router.delete("/delete:id", async (req, res) => {
-    deleteBooks(req, res);
+router.post("/Bookadd", async (req: Request, res: Response) => {
+  postBooks(req, res);
 });
 
+router.put("/update:id", async (req: Request, res: Response) => {
+  putBooks(req, res);
+});
+
+router.delete("/delete:id", async (req: Request, res: Response) => {
+  deleteBooks(req, res);
+});
 
 export default router;
