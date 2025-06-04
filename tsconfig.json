@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  },
-  "include": ["src"]
+    "target": "ES2020",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "strict": true,
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node"]
+  }
 }
