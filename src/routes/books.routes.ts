@@ -11,7 +11,7 @@ router.get("/Books", async (req: Request, res: Response) => {
   getBooks(req, res);
 });
 
-router.get("/:id", (req: Request, res: Response) => {
+router.get("/:id", async (req: Request, res: Response) => {
   getBooksId(req, res);
 });
 
