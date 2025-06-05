@@ -13,7 +13,7 @@ const router = express_1.default.Router();
 router.get("/Books", async (req, res) => {
     (0, get_books_1.getBooks)(req, res);
 });
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
     (0, get_books_id_1.getBooksId)(req, res);
 });
 router.post("/Bookadd", async (req, res) => {
